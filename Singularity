@@ -35,6 +35,13 @@ This will run RStudio Server which must be mounted with dependencies into the co
 %environment
 export LC_ALL=C.UTF-8
 
+%help
+This will run RStudio Server which must be mounted with dependencies into the container
+
+%apprun rserver
+  export PATH="$USER_PATH"
+  exec rserver "${@}"
 
 %runscript
-/dev/null
+  export PATH="$USER_PATH"
+  exec rserver "${@}"
